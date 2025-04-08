@@ -20,6 +20,20 @@ module.exports = {
         allowNull: false,
         type: DataTypes.FLOAT(14, 2)
       },
+      description: {
+        allowNull: false,
+        type: DataTypes.STRING(),
+      },
+      brandID: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "brand",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      }
     });
   },
 
